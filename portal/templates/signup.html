@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+  
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="signup" method="POST">
+        {% csrf_token %}
+        <div class="user-details">
+          <h3>Type of User</h1>
+          <label for="cars">Choose a User Type</label>
+              <select id="users" name="users">
+                <option value="Patient">Patient</option>
+                <option value="Doctor">Doctor</option>
+              </select>
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" name="firstname" id = "firstname" placeholder="Enter your First name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" name="lastname" id = "lastname" placeholder="Enter your last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="username" id = "username" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" id = "email"  placeholder="Enter your email" required>
+          </div>
+          <div>
+          <label><p>Profile Picture</p>
+            <input type="file" name="picture" id ="picture"/>
+          </label>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="Number" name="phonenumber" pattern = "[0-9]{10}" id = "phonenumber" minlength="10" maxlength="10" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" id = "password"placeholder="Enter your password(8 characters minimum)" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" name="confirmpassword" id = "confirmpassword" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <p><label for="Address">Address</label></p>
+        <textarea id="address" name="address" rows="2" cols="60" placeholder="Enter Your Address" required>.</textarea>
+        <div class="button">
+        <input type="submit" value="Register">
+        </div>
+        <form action="index">
+          <div>
+            <p>Already have an account?<a href="/">Login</a></p>
+          </div>
+          </form>
+      </form>
+    </div>
+  </div>
+  
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+</head>
+<body>
+  <h2>Your Profile Detail</h2>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>User Name</th>
+    <th>Email</th>
+    <th>Phonen Number</th>
+    <th>Address</th>
+  </tr>
+  {%for data1 in mymembers %}
+  <tr>
+    <td>{{data1.users}}</td>
+    <td>{{data1.firstname}}</td>
+    <td>{{data1.lastname}}</td>
+    <td>{{data1.username}}</td>
+    <td>{{data1.email}}</td>
+    <td>{{data1.phonenumber}}</td>
+    <td>{{data1.address}}</td>
+    <td>{{data1.publish}}</td>
+  </tr>
+  {%  endfor %}  
+</table>
+
+</body>
+</html>
+
+ 
+.
